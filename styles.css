@@ -1242,10 +1242,31 @@ p { color: var(--moss); line-height: 1.7; }
     body { font-size: 15.5px; }
 
     .header-cta { display: none; }
-    .menu-toggle { display: flex; }
+    .menu-toggle { display: flex; width: 44px; height: 44px; }
+
+    /* ===== Header mobile: logo prominente como desktop ===== */
+    .header-inner {
+        padding: 18px 22px;
+        gap: 14px;
+    }
+    .logo { gap: 12px; }
+    .logo-text { gap: 4px; }
+    .logo-mark { width: 54px; height: auto; }
+    .logo-name {
+        font-size: 1.2rem;
+        letter-spacing: 0.18em;
+        font-weight: 600;
+    }
+    .logo-script {
+        font-size: 1.55rem;
+        margin-left: 28px;
+        line-height: 1;
+        margin-top: 0;
+    }
+
     .main-nav {
-        position: fixed;
-        top: 73px;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         background: var(--cream);
@@ -1253,11 +1274,18 @@ p { color: var(--moss); line-height: 1.7; }
         padding: 24px 28px 36px;
         border-bottom: 1px solid var(--line);
         gap: 0;
-        transform: translateY(-110%);
-        transition: transform 0.4s ease;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-12px);
+        transition: transform 0.35s ease, opacity 0.25s ease, visibility 0s linear 0.3s;
         box-shadow: var(--shadow-md);
     }
-    .main-nav.is-open { transform: translateY(0); }
+    .main-nav.is-open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.35s ease, opacity 0.25s ease, visibility 0s linear 0s;
+    }
     .main-nav a {
         padding: 16px 0;
         border-bottom: 1px solid var(--line);
@@ -1339,6 +1367,7 @@ p { color: var(--moss); line-height: 1.7; }
 
 @media (max-width: 480px) {
     .container { padding: 0 20px; }
+    .header-inner { padding: 14px 20px; gap: 14px; }
     .section { padding: 64px 0; }
 
     .hero { padding-top: 32px; }
