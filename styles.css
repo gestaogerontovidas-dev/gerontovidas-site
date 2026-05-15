@@ -1266,10 +1266,35 @@ p { color: var(--moss); line-height: 1.7; }
     .main-nav a:last-child { border-bottom: 0; }
     .main-nav a::after { display: none; }
 
-    .hero-meta { flex-wrap: wrap; gap: 24px 28px; }
-    .hero-meta li { min-width: 90px; }
-    .hero-actions { flex-direction: column; align-items: stretch; }
+    /* ===== CENTRALIZA conteudo principal no mobile ===== */
+    .hero-content,
+    .sobre-content,
+    .avga-intro { text-align: center; }
+
+    /* Hero lead com largura controlada e centralizado */
+    .hero-lead { margin-left: auto; margin-right: auto; }
+
+    /* Hero meta: itens centralizados em flex-wrap */
+    .hero-meta {
+        flex-wrap: wrap;
+        gap: 22px 28px;
+        justify-content: center;
+    }
+    .hero-meta li { min-width: 88px; text-align: center; }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
     .hero-actions .btn { justify-content: center; }
+
+    /* Sobre: lead e socials centralizados via heranca text-align */
+    .sobre-content .lead { margin-left: auto; margin-right: auto; }
+
+    /* Sobre visual menor pra nao tomar a tela toda */
+    .sobre-visual { max-width: 320px; }
+    .sobre-img-acc { width: 65%; margin-top: -56px; }
+    .sobre-badge { margin-top: -28px; }
 
     /* Esconde elementos decorativos que sobrepoem a foto no mobile */
     .hero-tag-1,
@@ -1277,7 +1302,10 @@ p { color: var(--moss); line-height: 1.7; }
     .hero-ornament { display: none; }
 
     /* Reduz o aspect ratio do hero pra nao ficar tao alto no mobile */
-    .hero-visual { aspect-ratio: 4/5; max-width: 340px; }
+    .hero-visual { aspect-ratio: 4/5; max-width: 320px; }
+
+    /* Header com leve respiro extra */
+    .header-inner { padding: 16px 22px; }
 
     .ticker-track span { font-size: 1.1rem; }
 
@@ -1322,18 +1350,24 @@ p { color: var(--moss); line-height: 1.7; }
     .hero-meta span { font-size: 0.74rem; }
     .hero-visual { max-width: 300px; }
 
-    /* Sobre: imagens menores, badge ajustada */
-    .sobre-visual { max-width: 340px; }
-    .sobre-img-main { border-top-left-radius: 170px; border-top-right-radius: 170px; }
-    .sobre-img-acc { width: 65%; margin-top: -50px; border-width: 5px; }
-    .sobre-badge {
-        width: 84px;
-        height: 84px;
-        margin-top: -30px;
-        margin-left: 10px;
+    /* Sobre: imagens ainda menores no celular pequeno */
+    .sobre-visual { max-width: 260px; }
+    .sobre-img-main {
+        border-top-left-radius: 130px;
+        border-top-right-radius: 130px;
     }
-    .sobre-badge strong { font-size: 1.2rem; }
-    .sobre-badge em { font-size: 1.05rem; }
+    .sobre-img-acc { width: 62%; margin-top: -44px; border-width: 5px; }
+    .sobre-badge {
+        width: 78px;
+        height: 78px;
+        margin-top: -22px;
+        margin-left: 6px;
+    }
+    .sobre-badge strong { font-size: 1.1rem; }
+    .sobre-badge em { font-size: 0.95rem; }
+
+    /* Hero visual menor proporcional */
+    .hero-visual { max-width: 280px; }
 
     /* WhatsApp float menor e mais discreto */
     .whatsapp-float {
