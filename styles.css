@@ -1252,19 +1252,38 @@ p { color: var(--moss); line-height: 1.7; }
     .header-cta { display: none; }
     .menu-toggle { display: flex; width: 44px; height: 44px; }
 
-    /* ===== Header mobile: logo CENTRALIZADO via grid ===== */
+    /* ===== Header mobile: hamburger ESQ | nome CENTRO | logo DIR ===== */
     .header-inner {
-        display: grid;
-        grid-template-columns: 44px 1fr 44px;
+        display: flex;
         align-items: center;
-        padding: 16px 18px;
-        gap: 10px;
+        justify-content: center;
+        position: relative;
+        padding: 16px 20px;
+        gap: 0;
     }
-    .logo { grid-column: 2; justify-self: center; gap: 12px; }
-    .menu-toggle { grid-column: 3; justify-self: end; }
+    /* Logo do HEADER fica transparente pra layout — filhos se posicionam direto.
+       Cuidado: NAO aplicar no footer (.logo-footer)! */
+    .site-header .logo { display: contents; }
 
-    .logo-text { gap: 4px; }
-    .logo-mark { width: 54px; height: auto; }
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .site-header .logo-mark {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: auto;
+    }
+    .site-header .logo-text {
+        text-align: center;
+        gap: 2px;
+    }
     .logo-name {
         font-size: 1.2rem;
         letter-spacing: 0.18em;
@@ -1340,10 +1359,31 @@ p { color: var(--moss); line-height: 1.7; }
     .sobre-img-acc { width: 65%; margin-top: -56px; }
     .sobre-badge { margin-top: -28px; }
 
-    /* Esconde elementos decorativos que sobrepoem a foto no mobile */
-    .hero-tag-1,
-    .hero-tag-2,
-    .hero-ornament { display: none; }
+    /* Tags flutuantes sobre a foto do hero (como no desktop), redimensionadas */
+    .hero-tag-1 {
+        display: flex;
+        top: -16px;
+        left: -16px;
+        padding: 10px 14px;
+        gap: 10px;
+        max-width: 86%;
+    }
+    .hero-tag-2 {
+        display: flex;
+        bottom: 18px;
+        right: -16px;
+        padding: 10px 14px;
+        gap: 10px;
+        max-width: 78%;
+    }
+    .hero-tag strong { font-size: 0.9rem; }
+    .hero-tag small { font-size: 0.72rem; }
+    .hero-ornament {
+        display: block;
+        bottom: -20px;
+        left: -20px;
+    }
+    .hero-ornament svg { width: 80px; height: 80px; }
 
     /* Reduz o aspect ratio do hero pra nao ficar tao alto no mobile */
     .hero-visual { aspect-ratio: 4/5; max-width: 320px; }
