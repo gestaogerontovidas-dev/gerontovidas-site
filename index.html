@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GerontoVidas — Clínica Geriátrica em Brasília | Dra. Marcela Pandolfi</title>
+    <meta name="description" content="Clínica geriátrica especializada em demências, cuidados paliativos e envelhecimento saudável. Atendimento em consultório, domiciliar e telemedicina em todo o DF.">
+
+    <meta property="og:title" content="GerontoVidas — Clínica Geriátrica em Brasília">
+    <meta property="og:description" content="Cuidado humano e especializado para uma longevidade com qualidade de vida.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Allura&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="topo">
+        <div class="container header-inner">
+            <a href="#topo" class="logo" aria-label="GerontoVidas">
+                <!-- Logo: coração com GV entrelaçado -->
+                <svg class="logo-mark" viewBox="0 0 80 72" width="48" height="44" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#d4ae6d"/>
+                            <stop offset="50%" stop-color="#b8935a"/>
+                            <stop offset="100%" stop-color="#8e6e3e"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Coração -->
+                    <path d="M40 66 C 18 50, 6 36, 6 22 C 6 12, 14 6, 22 6 C 30 6, 36 12, 40 18 C 44 12, 50 6, 58 6 C 66 6, 74 12, 74 22 C 74 36, 62 50, 40 66 Z"
+                          fill="url(#goldGrad)" opacity="0.92"/>
+                    <!-- Monograma GV em branco/creme -->
+                    <text x="40" y="44" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="32" font-weight="500" fill="#fdf6ef" font-style="italic">GV</text>
+                    <!-- Anéis ovais entrelaçados -->
+                    <ellipse cx="40" cy="36" rx="26" ry="9" fill="none" stroke="#fdf6ef" stroke-width="1.4" opacity="0.95" transform="rotate(-15 40 36)"/>
+                </svg>
+                <span class="logo-text">
+                    <span class="logo-name">Geronto</span>
+                    <span class="logo-script">Vidas</span>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+                <a href="#sobre">Sobre</a>
+                <a href="#atendimento">Atendimento</a>
+                <a href="#especialidades">Especialidades</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="https://wa.me/5561999270028" class="btn btn-primary header-cta" target="_blank" rel="noopener">
+                Agendar
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="kicker">Clínica Geriátrica em Brasília</span>
+                <h1>
+                    Acolher cada fase da
+                    <span class="script-em">vida</span>
+                    com sabedoria e afeto.
+                </h1>
+                <p class="hero-lead">
+                    Sob direção da <strong>Dra. Marcela Pandolfi</strong>, médica geriatra,
+                    a GerontoVidas oferece um cuidado completo, multidisciplinar e personalizado —
+                    no consultório, em casa ou por telemedicina, em toda a região do DF.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://wa.me/5561999270028?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20GerontoVidas." class="btn btn-primary btn-lg" target="_blank" rel="noopener">Agendar consulta</a>
+                    <a href="#sobre" class="btn btn-ghost btn-lg">Conhecer a clínica</a>
+                </div>
+
+                <ul class="hero-meta">
+                    <li>
+                        <strong>4+</strong>
+                        <span>anos de assistência<br>domiciliar</span>
+                    </li>
+                    <li>
+                        <strong>6</strong>
+                        <span>especialidades<br>integradas</span>
+                    </li>
+                    <li>
+                        <strong>DF</strong>
+                        <span>atendimento em<br>toda a região</span>
+                    </li>
+                </ul>
+            </div>
+
+            <aside class="hero-visual">
+                <div class="hero-frame">
+                    <img src="assets/hands.png" alt="Profissional da GerontoVidas segurando carinhosamente as mãos de uma pessoa idosa" loading="eager">
+                </div>
+                <div class="hero-tag hero-tag-1">
+                    <div class="dot"></div>
+                    <div>
+                        <strong>Direção Médica</strong>
+                        <small>Dra. Marcela Pandolfi · RQE 10069</small>
+                    </div>
+                </div>
+                <div class="hero-tag hero-tag-2">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+                    <div>
+                        <strong>Cuidado integrado</strong>
+                        <small>Equipe multiprofissional</small>
+                    </div>
+                </div>
+                <div class="hero-ornament" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" width="120" height="120">
+                        <circle cx="60" cy="60" r="58" fill="none" stroke="#b8935a" stroke-width="0.6" opacity="0.4"/>
+                        <circle cx="60" cy="60" r="44" fill="none" stroke="#b8935a" stroke-width="0.6" opacity="0.4"/>
+                    </svg>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ===== TICKER / VALUES ===== -->
+    <section class="ticker">
+        <div class="ticker-track">
+            <span>Demências</span><em>·</em>
+            <span>Cuidados Paliativos</span><em>·</em>
+            <span>Envelhecimento Saudável</span><em>·</em>
+            <span>Avaliação Geriátrica Ampla</span><em>·</em>
+            <span>Home Care</span><em>·</em>
+            <span>Telemedicina</span><em>·</em>
+            <span>Demências</span><em>·</em>
+            <span>Cuidados Paliativos</span><em>·</em>
+            <span>Envelhecimento Saudável</span><em>·</em>
+            <span>Avaliação Geriátrica Ampla</span><em>·</em>
+            <span>Home Care</span><em>·</em>
+            <span>Telemedicina</span><em>·</em>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="section" id="sobre">
+        <div class="container sobre-grid">
+            <div class="sobre-visual">
+                <div class="sobre-img sobre-img-main">
+                    <img src="assets/painting.png" alt="Profissional da GerontoVidas acompanhando paciente idosa em atividade terapêutica de pintura" loading="lazy">
+                </div>
+                <div class="sobre-img sobre-img-acc">
+                    <img src="assets/physio.png" alt="Fisioterapeuta da equipe GerontoVidas em sessão de mobilidade com paciente idoso" loading="lazy">
+                </div>
+                <span class="sobre-badge">
+                    <em>desde</em>
+                    <strong>2021</strong>
+                </span>
+            </div>
+
+            <div class="sobre-content">
+                <span class="kicker">A clínica</span>
+                <h2>Onde a medicina <span class="script-em">encontra</span> o cuidado humano.</h2>
+                <p class="lead">
+                    A GerontoVidas nasceu da convicção de que envelhecer com saúde, autonomia
+                    e dignidade não é um privilégio — é um direito que merece ser construído
+                    com atenção, ciência e afeto.
+                </p>
+                <p>
+                    Há mais de quatro anos atuando em assistência domiciliar em Brasília,
+                    expandimos o cuidado para o consultório no <strong>Centro Clínico Vital Brazil</strong>
+                    e para a telemedicina. A liderança é da Dra. Marcela Pandolfi, médica geriatra,
+                    apoiada por uma equipe de enfermagem, nutrição, fisioterapia, fonoaudiologia e psicologia.
+                </p>
+
+                <a href="#diferenciais" class="link-arrow">Por que escolher a GerontoVidas <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ATENDIMENTO / MODALIDADES ===== -->
+    <section class="section section-peach" id="atendimento">
+        <div class="container">
+            <header class="section-header">
+                <span class="kicker">Modalidades de atendimento</span>
+                <h2>Onde você precisar, <span class="script-em">vamos</span> até lá.</h2>
+                <p>Três formas de cuidar com a mesma equipe e o mesmo padrão de atenção.</p>
+            </header>
+
+            <div class="modalidades">
+                <article class="modalidade">
+                    <span class="mod-num">01</span>
+                    <div class="mod-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 14h.01M15 14h.01"/></svg>
+                    </div>
+                    <h3>Consultório</h3>
+                    <p>Atendimento presencial no Centro Clínico Vital Brazil — Entrada B, Sala 311 (2º andar).</p>
+                    <ul>
+                        <li>Avaliação Geriátrica Ampla</li>
+                        <li>Acompanhamento clínico</li>
+                        <li>Testes cognitivos</li>
+                    </ul>
+                </article>
+
+                <article class="modalidade modalidade-feature">
+                    <span class="mod-num">02</span>
+                    <span class="mod-tag">Mais procurado</span>
+                    <div class="mod-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12l9-9 9 9M5 10v10h14V10M9 20v-6h6v6"/></svg>
+                    </div>
+                    <h3>Domiciliar (Home Care)</h3>
+                    <p>Quando ir ao consultório é difícil, a equipe vai até o paciente. Atendemos <strong>toda a região do DF</strong>.</p>
+                    <ul>
+                        <li>Cuidado no conforto do lar</li>
+                        <li>Menor risco de infecção</li>
+                        <li>Equipe multiprofissional</li>
+                    </ul>
+                </article>
+
+                <article class="modalidade">
+                    <span class="mod-num">03</span>
+                    <div class="mod-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>
+                    </div>
+                    <h3>Telemedicina</h3>
+                    <p>Consultas online para retornos, orientações familiares e segunda opinião — onde você estiver.</p>
+                    <ul>
+                        <li>Praticidade para familiares</li>
+                        <li>Suporte entre consultas</li>
+                        <li>Disponível em inglês</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ESPECIALIDADES ===== -->
+    <section class="section" id="especialidades">
+        <div class="container">
+            <header class="section-header">
+                <span class="kicker">Especialidades</span>
+                <h2>Cuidamos do <span class="script-em">essencial</span> em cada idade.</h2>
+                <p>Áreas de atuação que respondem com profundidade às demandas reais do envelhecimento.</p>
+            </header>
+
+            <div class="especialidades">
+                <article class="esp">
+                    <span class="esp-num">01</span>
+                    <h3>Demências e esquecimentos</h3>
+                    <p>Investigação de memória, diagnóstico diferencial de Alzheimer e outras demências, e manejo de longo prazo.</p>
+                </article>
+                <article class="esp">
+                    <span class="esp-num">02</span>
+                    <h3>Humor do idoso</h3>
+                    <p>Avaliação e tratamento de depressão, ansiedade, irritabilidade e apatia em pessoas idosas.</p>
+                </article>
+                <article class="esp">
+                    <span class="esp-num">03</span>
+                    <h3>Clínica médica</h3>
+                    <p>Hipertensão, diabetes, osteoporose e demais condições crônicas com olhar geriátrico.</p>
+                </article>
+                <article class="esp">
+                    <span class="esp-num">04</span>
+                    <h3>Cuidados paliativos</h3>
+                    <p>Controle de sintomas, conforto e qualidade de vida em doenças avançadas, com suporte à família.</p>
+                </article>
+                <article class="esp">
+                    <span class="esp-num">05</span>
+                    <h3>Envelhecimento ativo</h3>
+                    <p>Prevenção, rastreio e estímulo à autonomia para quem deseja envelhecer com saúde e propósito.</p>
+                </article>
+                <article class="esp">
+                    <span class="esp-num">06</span>
+                    <h3>Revisão de polifarmácia</h3>
+                    <p>Análise crítica dos medicamentos em uso, ajuste de doses e desprescrição segura.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AVALIAÇÃO GERIÁTRICA ===== -->
+    <section class="section section-cream" id="avaliacao">
+        <div class="container avga-grid">
+            <div class="avga-intro">
+                <span class="kicker">Serviço-chave</span>
+                <h2>Avaliação <span class="script-em">Geriátrica</span> Ampla</h2>
+                <p class="lead">
+                    A base de todo cuidado na GerontoVidas. Em uma ou poucas consultas,
+                    mapeamos saúde clínica, função, cognição, humor e contexto familiar
+                    — para construir um plano realmente sob medida.
+                </p>
+                <a href="https://wa.me/5561999270028?text=Ol%C3%A1!%20Quero%20agendar%20uma%20Avalia%C3%A7%C3%A3o%20Geri%C3%A1trica%20Ampla." class="btn btn-dark btn-lg" target="_blank" rel="noopener">Agendar avaliação</a>
+            </div>
+
+            <ul class="avga-list">
+                <li>
+                    <span class="avga-num">01</span>
+                    <div>
+                        <strong>Cognição</strong>
+                        <p>Avaliação de memória, atenção e raciocínio.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">02</span>
+                    <div>
+                        <strong>Humor</strong>
+                        <p>Rastreio de depressão, ansiedade e apatia.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">03</span>
+                    <div>
+                        <strong>Funcionalidade</strong>
+                        <p>Capacidade para atividades do dia a dia.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">04</span>
+                    <div>
+                        <strong>Mobilidade</strong>
+                        <p>Avaliação de marcha, equilíbrio e risco de quedas.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">05</span>
+                    <div>
+                        <strong>Estado nutricional</strong>
+                        <p>Peso, ingestão e composição corporal.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">06</span>
+                    <div>
+                        <strong>Revisão de medicamentos</strong>
+                        <p>Análise crítica e desprescrição segura.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="avga-num">07</span>
+                    <div>
+                        <strong>Condições clínicas</strong>
+                        <p>Manejo integrado de doenças crônicas.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="section section-dark" id="diferenciais">
+        <div class="container">
+            <header class="section-header section-header-dark">
+                <span class="kicker kicker-light">Diferenciais</span>
+                <h2>Um cuidado que vai <span class="script-em script-light">além</span> da consulta.</h2>
+                <p>Cinco compromissos que tornam o atendimento da GerontoVidas diferente.</p>
+            </header>
+
+            <div class="dif-grid">
+                <article class="dif">
+                    <span class="dif-num">01</span>
+                    <h3>Liderança de uma médica geriatra</h3>
+                    <p>Especialista em envelhecimento, com visão global da saúde do idoso e decisões mais seguras sobre doenças crônicas, medicamentos e funcionalidade.</p>
+                </article>
+                <article class="dif">
+                    <span class="dif-num">02</span>
+                    <h3>Equipe multidisciplinar integrada</h3>
+                    <p>Geriatria, enfermagem, fisioterapia, nutrição, fonoaudiologia e psicologia trabalhando em conjunto. Um cuidado completo, focado em qualidade de vida.</p>
+                </article>
+                <article class="dif">
+                    <span class="dif-num">03</span>
+                    <h3>Plano de cuidado individualizado</h3>
+                    <p>Cada idoso é único. Avaliamos clínica, cognição e funcionalidade para construir um plano adaptado às necessidades reais do paciente e da família.</p>
+                </article>
+                <article class="dif">
+                    <span class="dif-num">04</span>
+                    <h3>Atendimento no conforto do lar</h3>
+                    <p>O cuidado domiciliar permite que o idoso permaneça em seu ambiente familiar, reduzindo riscos de infecções hospitalares e promovendo bem-estar.</p>
+                </article>
+                <article class="dif">
+                    <span class="dif-num">05</span>
+                    <h3>Foco na autonomia e qualidade de vida</h3>
+                    <p>Nosso objetivo é preservar a independência, a dignidade e a qualidade de vida do idoso pelo maior tempo possível — não apenas tratar doenças.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EQUIPE ===== -->
+    <section class="section" id="equipe">
+        <div class="container">
+            <header class="section-header">
+                <span class="kicker">Equipe</span>
+                <h2>Diferentes saberes, <span class="script-em">um mesmo</span> propósito.</h2>
+                <p>Especialistas que se conversam para cuidar do idoso de forma realmente integrada.</p>
+            </header>
+
+            <div class="equipe-grid">
+                <article class="equipe-lead">
+                    <div class="equipe-avatar">
+                        <svg viewBox="0 0 220 280" preserveAspectRatio="xMidYMid slice">
+                            <defs>
+                                <linearGradient id="ag1" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#f5ddc9"/>
+                                    <stop offset="100%" stop-color="#ecb89c"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="220" height="280" fill="url(#ag1)"/>
+                            <circle cx="110" cy="105" r="44" fill="#fdf6ef" opacity="0.85"/>
+                            <path d="M40 280 Q110 180 180 280 Z" fill="#fdf6ef" opacity="0.85"/>
+                        </svg>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="kicker">Direção Médica</span>
+                        <h3>Dra. Marcela Pandolfi</h3>
+                        <p class="equipe-role">Médica Geriatra<br>CRM-DF 14730 · RQE 10069</p>
+                        <p>Especialista em envelhecimento, conduz a clínica com foco em uma medicina humanizada, baseada em evidências e centrada na pessoa.</p>
+                        <div class="equipe-socials">
+                            <a href="https://instagram.com/dramarcelapandolfi.geriatra" target="_blank" rel="noopener">@dramarcelapandolfi.geriatra</a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="equipe-roles">
+                    <h3 class="equipe-roles-title">A equipe multidisciplinar</h3>
+                    <ul>
+                        <li><strong>Enfermagem</strong><span>Cuidados clínicos e domiciliares</span></li>
+                        <li><strong>Nutrição</strong><span>Alimentação adequada para a 3ª idade</span></li>
+                        <li><strong>Fisioterapia</strong><span>Mobilidade e prevenção de quedas</span></li>
+                        <li><strong>Fonoaudiologia</strong><span>Cognição, fala e deglutição</span></li>
+                        <li><strong>Psicologia</strong><span>Suporte emocional e familiar</span></li>
+                        <li><strong>Clínica médica</strong><span>Apoio em condições crônicas</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section-peach" id="faq">
+        <div class="container faq-wrap">
+            <header class="section-header">
+                <span class="kicker">Perguntas frequentes</span>
+                <h2>As dúvidas que as <span class="script-em">famílias</span> mais nos trazem.</h2>
+            </header>
+
+            <div class="faq">
+                <details class="faq-item" open>
+                    <summary><span>Vocês atendem pacientes com demência?</span></summary>
+                    <div class="faq-body">
+                        <p>Sim. O atendimento de pacientes com demência — incluindo Alzheimer e outras causas — é uma das principais especialidades da GerontoVidas. Realizamos investigação diagnóstica, manejo medicamentoso e suporte à família ao longo de toda a evolução da doença.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary><span>É possível investigar perda de memória?</span></summary>
+                    <div class="faq-body">
+                        <p>Sim. Fazemos avaliação cognitiva completa, com testes de memória, atenção e raciocínio, além da investigação clínica das causas. Esse trabalho é conduzido em parceria entre geriatria, fonoaudiologia e psicologia, quando necessário.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary><span>E se o idoso não conseguir ir até o consultório?</span></summary>
+                    <div class="faq-body">
+                        <p>Vamos até ele. Atendemos em domicílio em <strong>toda a região do DF</strong> — desde uma única avaliação geriátrica até acompanhamento contínuo com a equipe multidisciplinar.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary><span>Vocês atendem convênios?</span></summary>
+                    <div class="faq-body">
+                        <p>No momento, o atendimento é apenas particular. Emitimos os recibos necessários para solicitação de reembolso junto ao seu plano de saúde.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary><span>O atendimento pode ser feito em outro idioma?</span></summary>
+                    <div class="faq-body">
+                        <p>Sim, a Dra. Marcela atende em inglês quando solicitado — especialmente útil para famílias com pacientes estrangeiros ou residentes fora do Brasil.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary><span>Vocês entregam materiais e orientações por escrito?</span></summary>
+                    <div class="faq-body">
+                        <p>Sim. Disponibilizamos guias de cuidado e orientações por escrito para as famílias — um material de apoio importante para o dia a dia do cuidador.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="container cta-grid">
+            <div>
+                <span class="kicker kicker-dark">Vamos conversar</span>
+                <h2>Cuidar de quem você ama <span class="script-em">começa</span> com uma boa conversa.</h2>
+                <p>Fale com nossa equipe pelo WhatsApp e juntos construímos o melhor plano de cuidado.</p>
+            </div>
+            <a href="https://wa.me/5561999270028?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20GerontoVidas." class="btn btn-dark btn-lg" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section class="section section-cream" id="contato">
+        <div class="container contato-grid">
+            <div class="contato-info">
+                <span class="kicker">Contato</span>
+                <h2>Estamos prontos para <span class="script-em">receber</span> você.</h2>
+
+                <ul class="contato-list">
+                    <li>
+                        <span class="contato-label">Endereço</span>
+                        <p>Centro Clínico Vital Brazil<br>Entrada B · Sala 311 (2º andar)<br>Brasília — DF</p>
+                    </li>
+                    <li>
+                        <span class="contato-label">Telefone / WhatsApp</span>
+                        <a class="contato-link" href="https://wa.me/5561999270028" target="_blank" rel="noopener">(61) 99927-0028</a>
+                    </li>
+                    <li>
+                        <span class="contato-label">Horário</span>
+                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    </li>
+                    <li>
+                        <span class="contato-label">Atendimento domiciliar</span>
+                        <p>Toda a região do DF</p>
+                    </li>
+                    <li>
+                        <span class="contato-label">Convênios</span>
+                        <p>Atendimento somente particular</p>
+                    </li>
+                </ul>
+
+                <div class="contato-socials">
+                    <a href="https://instagram.com/gerontovidas" target="_blank" rel="noopener">@gerontovidas</a>
+                    <a href="https://instagram.com/dramarcelapandolfi.geriatra" target="_blank" rel="noopener">@dramarcelapandolfi.geriatra</a>
+                </div>
+            </div>
+
+            <form class="contato-form" id="contatoForm" novalidate>
+                <h3>Solicite contato</h3>
+                <p class="form-sub">Preencha e fale com a nossa equipe.</p>
+
+                <label>
+                    <span>Nome completo</span>
+                    <input type="text" name="nome" required autocomplete="name">
+                </label>
+                <label>
+                    <span>Telefone / WhatsApp</span>
+                    <input type="tel" name="telefone" required autocomplete="tel" placeholder="(61) 99999-9999">
+                </label>
+                <label>
+                    <span>Como podemos ajudar?</span>
+                    <select name="assunto">
+                        <option>Avaliação Geriátrica Ampla</option>
+                        <option>Atendimento Domiciliar</option>
+                        <option>Telemedicina</option>
+                        <option>Demência / Memória</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Mensagem (opcional)</span>
+                    <textarea name="mensagem" rows="3" placeholder="Conte um pouco sobre a situação..."></textarea>
+                </label>
+
+                <button type="submit" class="btn btn-dark btn-lg btn-block">Enviar pelo WhatsApp</button>
+                <small class="form-note">Abriremos uma conversa no WhatsApp com a sua mensagem pronta.</small>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#topo" class="logo logo-footer">
+                    <svg class="logo-mark" viewBox="0 0 80 72" width="44" height="40" aria-hidden="true">
+                        <path d="M40 66 C 18 50, 6 36, 6 22 C 6 12, 14 6, 22 6 C 30 6, 36 12, 40 18 C 44 12, 50 6, 58 6 C 66 6, 74 12, 74 22 C 74 36, 62 50, 40 66 Z" fill="#ecb89c" opacity="0.95"/>
+                        <text x="40" y="44" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="32" font-weight="500" fill="#4d452f" font-style="italic">GV</text>
+                        <ellipse cx="40" cy="36" rx="26" ry="9" fill="none" stroke="#4d452f" stroke-width="1.4" opacity="0.9" transform="rotate(-15 40 36)"/>
+                    </svg>
+                    <span class="logo-text">
+                        <span class="logo-name">Geronto</span>
+                        <span class="logo-script">Vidas</span>
+                    </span>
+                </a>
+                <p>Cuidado humano para uma longevidade com qualidade de vida.</p>
+            </div>
+
+            <div>
+                <strong>Atendimento</strong>
+                <ul>
+                    <li><a href="#atendimento">Consultório</a></li>
+                    <li><a href="#atendimento">Home Care</a></li>
+                    <li><a href="#atendimento">Telemedicina</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>Especialidades</strong>
+                <ul>
+                    <li><a href="#especialidades">Demências</a></li>
+                    <li><a href="#especialidades">Cuidados paliativos</a></li>
+                    <li><a href="#especialidades">Envelhecimento ativo</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>Fale conosco</strong>
+                <ul>
+                    <li><a href="https://wa.me/5561999270028" target="_blank" rel="noopener">(61) 99927-0028</a></li>
+                    <li>Seg–Sex 8h–18h · Sáb 8h–12h</li>
+                    <li>Vital Brazil · Sala 311</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> GerontoVidas · Dra. Marcela Pandolfi — CRM-DF 14730 / RQE 10069</small>
+            <small>Atendimento somente particular.</small>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5561999270028" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 24 12c0-3.2-1.2-6.2-3.5-8.5zM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 22 12c0 5.5-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.4-.4.3-.5c.1-.1.1-.3 0-.4l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1.1 1.1-1.1 2.6 1.1 3 1.3 3.2 2.2 3.4 5.4 4.8c.7.3 1.3.5 1.8.6.7.2 1.4.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.6-.4z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
