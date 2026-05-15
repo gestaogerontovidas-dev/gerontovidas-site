@@ -102,7 +102,9 @@ p { color: var(--moss); line-height: 1.7; }
 
 /* ===== Kicker ===== */
 .kicker {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
     font-family: var(--font-sans);
     font-size: 0.72rem;
     letter-spacing: 0.32em;
@@ -110,17 +112,13 @@ p { color: var(--moss); line-height: 1.7; }
     font-weight: 500;
     color: var(--gold);
     margin-bottom: 18px;
-    position: relative;
-    padding-left: 36px;
 }
 .kicker::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
     width: 26px;
     height: 1px;
     background: var(--gold);
+    flex-shrink: 0;
 }
 .kicker-light { color: var(--peach); }
 .kicker-light::before { background: var(--peach); }
@@ -489,12 +487,7 @@ p { color: var(--moss); line-height: 1.7; }
     max-width: 740px;
     margin: 0 auto 72px;
 }
-.section-header .kicker { padding-left: 36px; margin-bottom: 22px; }
-.section-header .kicker::before {
-    left: 50%;
-    transform: translateX(-100%) translateY(0);
-    margin-left: -10px;
-}
+.section-header .kicker { margin-bottom: 22px; }
 .section-header h2 { margin-bottom: 18px; }
 .section-header p {
     font-size: 1.1rem;
@@ -843,7 +836,7 @@ p { color: var(--moss); line-height: 1.7; }
     overflow: hidden;
     box-shadow: var(--shadow-md);
 }
-.equipe-info .kicker { padding-left: 0; margin-bottom: 10px; }
+.equipe-info .kicker { margin-bottom: 10px; gap: 0; }
 .equipe-info .kicker::before { display: none; }
 .equipe-info h3 {
     font-size: 1.9rem;
@@ -1193,7 +1186,46 @@ p { color: var(--moss); line-height: 1.7; }
     .hero-tag-2 { right: -2%; }
 
     .sobre-grid { grid-template-columns: 1fr; gap: 60px; }
-    .sobre-visual { max-width: 420px; margin: 0 auto; }
+
+    /* Reset sobre-visual: empilha as imagens em vez de sobrepor com absolute */
+    .sobre-visual {
+        position: static;
+        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    .sobre-img {
+        position: static;
+        width: 100%;
+    }
+    .sobre-img-main {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/5;
+        border-top-left-radius: 220px;
+        border-top-right-radius: 220px;
+    }
+    .sobre-img-acc {
+        width: 70%;
+        height: auto;
+        aspect-ratio: 5/4;
+        align-self: flex-end;
+        margin-top: -70px;
+        border: 6px solid var(--cream);
+        position: relative;
+        z-index: 2;
+    }
+    .sobre-badge {
+        position: static;
+        align-self: flex-start;
+        margin-top: -36px;
+        margin-left: 12px;
+        z-index: 3;
+    }
 
     .modalidades { grid-template-columns: 1fr; }
     .especialidades { grid-template-columns: repeat(2, 1fr); }
@@ -1234,11 +1266,18 @@ p { color: var(--moss); line-height: 1.7; }
     .main-nav a:last-child { border-bottom: 0; }
     .main-nav a::after { display: none; }
 
-    .hero-meta { flex-direction: column; gap: 18px; align-items: flex-start; }
+    .hero-meta { flex-wrap: wrap; gap: 24px 28px; }
+    .hero-meta li { min-width: 90px; }
     .hero-actions { flex-direction: column; align-items: stretch; }
     .hero-actions .btn { justify-content: center; }
-    .hero-tag-1 { top: 4%; left: 0; }
-    .hero-tag-2 { bottom: 6%; right: 0; }
+
+    /* Esconde elementos decorativos que sobrepoem a foto no mobile */
+    .hero-tag-1,
+    .hero-tag-2,
+    .hero-ornament { display: none; }
+
+    /* Reduz o aspect ratio do hero pra nao ficar tao alto no mobile */
+    .hero-visual { aspect-ratio: 4/5; max-width: 340px; }
 
     .ticker-track span { font-size: 1.1rem; }
 
@@ -1274,16 +1313,48 @@ p { color: var(--moss); line-height: 1.7; }
     .container { padding: 0 20px; }
     .section { padding: 64px 0; }
 
-    .hero h1 { font-size: 2.4rem; }
-    .hero-lead { font-size: 1.02rem; }
-    .hero-meta strong { font-size: 1.8rem; }
+    .hero { padding-top: 32px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-lead { font-size: 1rem; margin-bottom: 32px; }
+    .hero-actions { margin-bottom: 40px; }
+    .hero-meta { padding-top: 28px; gap: 20px 24px; }
+    .hero-meta strong { font-size: 1.7rem; }
+    .hero-meta span { font-size: 0.74rem; }
+    .hero-visual { max-width: 300px; }
 
-    .sobre-visual { aspect-ratio: 3/4; }
-    .sobre-badge { width: 88px; height: 88px; right: 0; }
+    /* Sobre: imagens menores, badge ajustada */
+    .sobre-visual { max-width: 340px; }
+    .sobre-img-main { border-top-left-radius: 170px; border-top-right-radius: 170px; }
+    .sobre-img-acc { width: 65%; margin-top: -50px; border-width: 5px; }
+    .sobre-badge {
+        width: 84px;
+        height: 84px;
+        margin-top: -30px;
+        margin-left: 10px;
+    }
     .sobre-badge strong { font-size: 1.2rem; }
+    .sobre-badge em { font-size: 1.05rem; }
 
-    .whatsapp-float { width: 54px; height: 54px; bottom: 20px; right: 20px; }
-    .whatsapp-float svg { width: 24px; height: 24px; }
+    /* WhatsApp float menor e mais discreto */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 16px;
+        right: 16px;
+    }
+    .whatsapp-float svg { width: 22px; height: 22px; }
 
-    .btn-lg { padding: 14px 24px; font-size: 0.8rem; }
+    /* Padding extra no final pra nao colidir com o float do WhatsApp */
+    .site-footer { padding-bottom: 110px; }
+    .footer-bottom { padding-right: 70px; gap: 10px; }
+    .footer-bottom small { line-height: 1.5; }
+    .contato-socials { padding-right: 64px; padding-bottom: 8px; }
+
+    .btn-lg { padding: 14px 24px; font-size: 0.78rem; }
+
+    .ticker { padding: 20px 0; }
+    .ticker-track span { font-size: 1rem; }
+    .ticker-track em { font-size: 1.2rem; }
+
+    .section-header { margin-bottom: 48px; }
 }
