@@ -460,6 +460,25 @@ p { color: var(--moss); line-height: 1.7; }
 }
 .section-peach { background: var(--peach-soft); }
 .section-cream { background: var(--peach-pale); }
+.section-soon {
+    background:
+        radial-gradient(60% 60% at 80% 20%, rgba(245, 221, 201, 0.5) 0%, transparent 60%),
+        radial-gradient(50% 50% at 10% 80%, rgba(184, 147, 90, 0.12) 0%, transparent 60%),
+        var(--peach-pale);
+    overflow: hidden;
+    position: relative;
+}
+.section-soon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 240px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    opacity: 0.6;
+    pointer-events: none;
+}
 .section-dark {
     background: var(--moss-dark);
     color: var(--peach-pale);
@@ -604,6 +623,20 @@ p { color: var(--moss); line-height: 1.7; }
 }
 .sobre-content p { margin-bottom: 16px; font-weight: 300; }
 .sobre-content strong { color: var(--moss-dark); font-weight: 500; }
+
+.sobre-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+.sobre-actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    text-align: center;
+}
 
 /* ===== MODALIDADES ===== */
 .modalidades {
@@ -824,78 +857,162 @@ p { color: var(--moss); line-height: 1.7; }
     line-height: 1.7;
 }
 
-/* ===== EQUIPE ===== */
-.equipe-grid {
+/* ===== DIRECAO MEDICA ===== */
+.direcao-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1040px;
+    margin: 0 auto;
 }
-.equipe-lead {
+.doctor-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 32px;
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 36px;
+    grid-template-columns: 150px 1fr;
+    gap: 26px;
     align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-.equipe-avatar {
-    width: 220px;
-    height: 280px;
-    border-radius: 110px 110px 6px 6px;
-    overflow: hidden;
+.doctor-card:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
+    border-color: var(--gold);
 }
-.equipe-info .kicker { margin-bottom: 10px; gap: 0; }
-.equipe-info .kicker::before { display: none; }
-.equipe-info h3 {
-    font-size: 1.9rem;
+.doctor-avatar {
+    width: 150px;
+    height: 190px;
+    border-radius: 75px 75px 4px 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.doctor-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
     font-weight: 500;
+    color: var(--moss-dark);
     margin-bottom: 8px;
+    line-height: 1.15;
 }
-.equipe-role {
+.doctor-role {
     color: var(--burgundy);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     letter-spacing: 0.04em;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    line-height: 1.4;
 }
-.equipe-info p { font-weight: 300; margin-bottom: 14px; font-size: 0.96rem; }
-.equipe-socials a {
-    font-size: 0.85rem;
+.doctor-info > p {
+    font-weight: 300;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+    line-height: 1.6;
+    color: var(--moss);
+}
+.doctor-social {
+    display: inline-block;
+    font-size: 0.82rem;
     color: var(--burgundy);
     border-bottom: 1px solid var(--burgundy);
     padding-bottom: 2px;
-    transition: color 0.25s;
+    transition: color 0.25s, border-color 0.25s;
 }
-.equipe-socials a:hover { color: var(--moss-dark); border-color: var(--moss-dark); }
+.doctor-social:hover {
+    color: var(--moss-dark);
+    border-color: var(--moss-dark);
+}
 
-.equipe-roles {
-    padding-left: 60px;
-    border-left: 1px solid var(--line);
-}
-.equipe-roles-title {
-    font-size: 1.3rem;
-    margin-bottom: 28px;
-    color: var(--moss-dark);
-    font-style: italic;
-    font-weight: 400;
-}
-.equipe-roles ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 32px;
-}
-.equipe-roles li strong {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    color: var(--moss-dark);
-    font-weight: 500;
-    margin-bottom: 2px;
-}
+/* Mantem styles antigos abaixo (.equipe-*) — nao usados mais no HTML mas
+   ficam aqui caso seja util reverter. CSS abaixo eh seguro de remover. */
 .equipe-roles li span {
     font-size: 0.85rem;
     color: var(--moss);
     line-height: 1.45;
+}
+
+/* ===== EM BREVE (nova clinica) ===== */
+.soon-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.soon-content h2 { margin: 8px 0 22px; }
+.soon-content .lead {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+    color: var(--moss-dark);
+    font-weight: 400;
+}
+.soon-content > p {
+    margin-bottom: 28px;
+    font-weight: 300;
+}
+.soon-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+}
+.soon-visual {
+    position: relative;
+    aspect-ratio: 1/1;
+    max-width: 420px;
+    justify-self: end;
+    width: 100%;
+}
+.soon-visual svg { width: 100%; height: 100%; }
+.soon-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1;
+    pointer-events: none;
+    width: 80%;
+}
+.soon-overline {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--moss-dark);
+    margin-bottom: 18px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+.soon-script {
+    display: block;
+    font-family: var(--font-script);
+    font-size: clamp(3.4rem, 7vw, 5rem);
+    line-height: 0.95;
+    background: linear-gradient(135deg, #d4ae6d 0%, #b8935a 55%, #8e6e3e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding: 0 4px;
+}
+.soon-pulse {
+    position: absolute;
+    top: 18%;
+    right: 18%;
+    width: 14px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(184, 147, 90, 0.6);
+    animation: soonPulse 2.4s infinite ease-out;
+}
+@keyframes soonPulse {
+    0% { box-shadow: 0 0 0 0 rgba(184, 147, 90, 0.6); }
+    70% { box-shadow: 0 0 0 22px rgba(184, 147, 90, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(184, 147, 90, 0); }
 }
 
 /* ===== FAQ ===== */
@@ -1240,8 +1357,9 @@ p { color: var(--moss); line-height: 1.7; }
     .avga-grid { grid-template-columns: 1fr; gap: 48px; }
     .avga-intro { position: static; }
     .dif-grid { grid-template-columns: 1fr; max-width: 600px; }
-    .equipe-grid { grid-template-columns: 1fr; gap: 56px; }
-    .equipe-roles { padding-left: 0; border-left: 0; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .direcao-grid { grid-template-columns: 1fr; gap: 28px; max-width: 560px; }
+    .soon-grid { grid-template-columns: 1fr; gap: 48px; }
+    .soon-visual { justify-self: center; max-width: 340px; }
     .contato-grid { grid-template-columns: 1fr; gap: 56px; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1345,11 +1463,30 @@ p { color: var(--moss); line-height: 1.7; }
     }
     .hero-meta li { min-width: 88px; text-align: center; }
 
-    .hero-actions {
+    .hero-actions,
+    .soon-actions {
         flex-direction: column;
         align-items: stretch;
+        justify-content: center;
     }
-    .hero-actions .btn { justify-content: center; }
+    .hero-actions .btn,
+    .soon-actions .btn { justify-content: center; }
+
+    /* CTAs do Sobre: lado a lado mesmo no mobile */
+    .sobre-actions {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .sobre-actions .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 14px 12px;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        justify-content: center;
+    }
 
     /* Sobre: lead e socials centralizados via heranca text-align */
     .sobre-content .lead { margin-left: auto; margin-right: auto; }
@@ -1394,12 +1531,10 @@ p { color: var(--moss); line-height: 1.7; }
     .ticker-track span { font-size: 1.1rem; }
 
     .especialidades { grid-template-columns: 1fr; }
-    .equipe-lead { grid-template-columns: 1fr; gap: 24px; }
-    .equipe-avatar { margin: 0 auto; }
-    .equipe-info { text-align: center; }
-    .equipe-info .kicker { padding-left: 30px; }
-    .equipe-info .kicker::before { display: inline-block; }
-    .equipe-roles ul { grid-template-columns: 1fr; }
+    .doctor-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 28px 24px; }
+    .doctor-avatar { width: 140px; height: 175px; margin: 0 auto; }
+    .doctor-info h3 { font-size: 1.35rem; }
+    .doctor-info > p { font-size: 0.9rem; }
 
     .cta-grid { grid-template-columns: 1fr; text-align: center; }
     .cta-banner .kicker { padding-left: 30px; }

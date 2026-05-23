@@ -63,7 +63,7 @@ if (year) year.textContent = new Date().getFullYear();
 
 // ===== Reveal on scroll =====
 const revealTargets = document.querySelectorAll(
-    '.section-header, .modalidade, .esp, .dif, .avga-list li, .equipe-lead, .equipe-roles, .faq-item, .contato-form, .contato-list, .sobre-content, .sobre-visual, .hero-meta li'
+    '.section-header, .modalidade, .esp, .dif, .avga-list li, .doctor-card, .faq-item, .contato-form, .contato-list, .sobre-content, .sobre-visual, .hero-meta li'
 );
 revealTargets.forEach((el) => el.classList.add('fade-in'));
 
