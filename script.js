@@ -94,3 +94,31 @@ if (header) {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 }
+
+// ===== Match heights between doctor cards (Marcela / Aniele) =====
+// Garante que ambos os cards tenham a mesma altura em qualquer viewport,
+// mesmo no mobile (single column grid), aplicando min-height = maior altura.
+const doctorCards = document.querySelectorAll('.doctor-card');
+if (doctorCards.length > 1) {
+    const matchDoctorCardHeights = () => {
+        doctorCards.forEach((c) => { c.style.minHeight = ''; });
+        // forca reflow antes de medir
+        let maxH = 0;
+        doctorCards.forEach((c) => { maxH = Math.max(maxH, c.offsetHeight); });
+        doctorCards.forEach((c) => { c.style.minHeight = maxH + 'px'; });
+    };
+
+    // dispara apos carregamento das fontes (que afetam altura)
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(matchDoctorCardHeights);
+    } else {
+        window.addEventListener('load', matchDoctorCardHeights);
+    }
+
+    // reajusta em resize (orientacao mobile, breakpoint mudando)
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(matchDoctorCardHeights, 100);
+    }, { passive: true });
+}

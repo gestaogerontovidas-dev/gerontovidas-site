@@ -921,6 +921,10 @@ p { color: var(--moss); line-height: 1.7; }
     width: 100%;
     max-width: 380px;
     margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .doctor-info h3 {
     font-family: var(--font-serif);
