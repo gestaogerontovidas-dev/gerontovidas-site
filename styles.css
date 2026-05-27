@@ -864,23 +864,25 @@ p { color: var(--moss); line-height: 1.7; }
     line-height: 1.7;
 }
 
-/* ===== DIRECAO MEDICA ===== */
+/* ===== DIRECAO TECNICA ===== */
 .direcao-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     max-width: 1040px;
     margin: 0 auto;
+    align-items: start;          /* alturas naturais, sem stretch */
 }
 .doctor-card {
     background: var(--cream);
     border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 32px;
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 26px;
-    align-items: flex-start;
+    border-radius: 8px;
+    padding: 40px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .doctor-card:hover {
@@ -889,34 +891,77 @@ p { color: var(--moss); line-height: 1.7; }
     border-color: var(--gold);
 }
 .doctor-avatar {
-    width: 150px;
-    height: 190px;
-    border-radius: 75px 75px 4px 4px;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 4/5;
+    border-radius: 120px 120px 10px 10px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    flex-shrink: 0;
+    position: relative;
 }
 .doctor-avatar svg,
 .doctor-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 22%;
     display: block;
+}
+/* sutil borda dourada interna para destacar o arco */
+.doctor-avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(184, 147, 90, 0.25);
+    pointer-events: none;
+}
+
+.doctor-info {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+.doctor-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: var(--moss-dark);
+    margin-bottom: 8px;
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+}
+.doctor-role {
+    color: var(--burgundy);
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+.doctor-info > p {
+    font-weight: 300;
+    font-size: 0.94rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+    color: var(--moss);
 }
 
 /* Lista de credenciais (Dra. Marcela) */
 .doctor-credentials {
-    margin-top: 4px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    text-align: left;
+    max-width: 340px;
+    margin: 0 auto;
 }
 .doctor-credentials li {
     position: relative;
     padding-left: 18px;
     font-size: 0.88rem;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--moss);
     font-weight: 300;
 }
@@ -929,29 +974,7 @@ p { color: var(--moss); line-height: 1.7; }
     height: 1px;
     background: var(--gold);
 }
-.doctor-info h3 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--moss-dark);
-    margin-bottom: 8px;
-    line-height: 1.15;
-}
-.doctor-role {
-    color: var(--burgundy);
-    font-weight: 500;
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 14px;
-    line-height: 1.4;
-}
-.doctor-info > p {
-    font-weight: 300;
-    font-size: 0.92rem;
-    margin-bottom: 14px;
-    line-height: 1.6;
-    color: var(--moss);
-}
+
 .doctor-social {
     display: inline-block;
     font-size: 0.82rem;
@@ -1604,10 +1627,11 @@ p { color: var(--moss); line-height: 1.7; }
     .ticker-track span { font-size: 1.1rem; }
 
     .especialidades { grid-template-columns: 1fr; }
-    .doctor-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 28px 24px; }
-    .doctor-avatar { width: 140px; height: 175px; margin: 0 auto; }
+    .doctor-card { padding: 32px 24px; gap: 20px; }
+    .doctor-avatar { max-width: 180px; border-radius: 100px 100px 10px 10px; }
     .doctor-info h3 { font-size: 1.35rem; }
     .doctor-info > p { font-size: 0.9rem; }
+    .doctor-credentials li { font-size: 0.85rem; }
 
     .cta-grid { grid-template-columns: 1fr; text-align: center; }
     .cta-banner .kicker { padding-left: 30px; }
