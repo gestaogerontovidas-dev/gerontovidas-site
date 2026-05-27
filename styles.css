@@ -880,7 +880,7 @@ p { color: var(--moss); line-height: 1.7; }
     display: grid;
     grid-template-columns: 150px 1fr;
     gap: 26px;
-    align-items: center;
+    align-items: flex-start;
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 .doctor-card:hover {
@@ -894,6 +894,40 @@ p { color: var(--moss); line-height: 1.7; }
     border-radius: 75px 75px 4px 4px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+.doctor-avatar svg,
+.doctor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* Lista de credenciais (Dra. Marcela) */
+.doctor-credentials {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.doctor-credentials li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--moss);
+    font-weight: 300;
+}
+.doctor-credentials li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 10px;
+    height: 1px;
+    background: var(--gold);
 }
 .doctor-info h3 {
     font-family: var(--font-serif);
@@ -1063,6 +1097,38 @@ p { color: var(--moss); line-height: 1.7; }
 .faq-item summary:hover { color: var(--burgundy); }
 .faq-body {
     padding: 0 8px 30px;
+}
+.faq-body p + p,
+.faq-body p + ul,
+.faq-body ul + p {
+    margin-top: 12px;
+}
+.faq-list-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 90%;
+}
+.faq-list-inline li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--moss);
+    font-weight: 300;
+}
+.faq-list-inline li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 1px;
+    background: var(--gold);
+}
+.faq-list-inline strong {
+    color: var(--moss-dark);
+    font-weight: 500;
 }
 .faq-body p {
     font-size: 1.02rem;
